@@ -1,5 +1,5 @@
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-            Alienware AlienFX Light Manipulation Program for Linux
+      Alienware AlienFX Light Manipulation Program in GNU C++ for Linux
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 Building source code requires libusb-1.0 headers.
 If you are missing them on Debian, issue command:
@@ -11,6 +11,12 @@ To build source:
 
 To install to userland:
   sudo make install
+
+To make a Debian package (i386 or amd64):
+  make deb
+
+To make source tarball:
+  make tarball
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 Alienware AlienFX Light Manipulation Program v1.0
 Usage:    alienfx [options]
