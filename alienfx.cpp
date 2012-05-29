@@ -208,17 +208,17 @@ bool parse_arguments(int argc, char *argv[], char **envp) {
 		var = *(argv++);
 		//if (debug2) printf("Debug: Var: \"%s\"\n", var);
 		if (!strcmp(var,"-c")) { strcpy(command,*(argv++)); } //command!
-		if (!strcmp(var,"-v")) { debug = true;  }  //alienfx debugging
-		if (!strcmp(var,"-u")) { debug2 = true; }  //libusb debugging
-		if (!strcmp(var,"-w")) { wait = true;   }  //usb in waiting
+		if (!strcmp(var,"-d")) { speed = atoi(*(argv++)); }  //flash/morph speed
 		if (!strcmp(var,"-h")|!strcmp(var,"--help")) { help = true;   }  //help output
+		if (!strcmp(var,"-p")) { preset = atoi(*(argv++)); } //presets!
+		if (!strcmp(var,"-P")) { sscanf(*(argv++), "%llx", (unsigned int *)&alienFXid); }  //USB ProductID, ugly!
+		if (!strcmp(var,"-r")) { darkness = true; }//Plunge into darkness before set colours
 		if (!strcmp(var,"-R")) { reboot = true; }  //COMMAND_REBOOT_CHIP
 		if (!strcmp(var,"-s")) { saving = true; power_block = atoi(*(argv++)); }  //saving (save to CMOS not available)
-		if (!strcmp(var,"-d")) { speed = atoi(*(argv++)); }  //flash/morph speed
-		if (!strcmp(var,"-r")) { darkness = true; }//Plunge into darkness before set colours
-		if (!strcmp(var,"-P")) { sscanf(*(argv++), "%llx", (unsigned int *)&alienFXid); }  //USB ProductID, ugly!
 		if (!strcmp(var,"-t")) { usb_sleep = DEFAULT_USB_SLEEP * atoi(*(argv++)); } //USB delay
-		if (!strcmp(var,"-z")) { preset = atoi(*(argv++)); } //presets!
+		if (!strcmp(var,"-u")) { debug2 = true; }  //libusb debugging
+		if (!strcmp(var,"-v")) { debug = true;  }  //alienfx debugging
+		if (!strcmp(var,"-w")) { wait = true;   }  //usb in waiting
 		if (!strcmp(var,"-X")) { //Raw command mode, useful for light notifications
 			for (i=0;i<10;i++) { rawcmd[i] = atoi(*(argv++)); };
 			rawmode = true;
@@ -228,18 +228,15 @@ bool parse_arguments(int argc, char *argv[], char **envp) {
 		printf("All presets are applied by default to all zones.  Arguments supplied regarding\n");
 		printf("power mode, light zones, effects or colours are ignored when selecting presets.\n");
 		printf("Available lightchip presets:\n");
-		for (i=0;i<20;i++) printf(" alienfx -z %.2i   =   %s\n", i+1, preset_name[i]);
+		for (i=0;i<20;i++) printf(" alienfx -p %.2i == alienfx -c %s == %s\n", i+1, preset_data[i], preset_name[i]);
 		exit(0);
 	}
-/*	if ((preset>0)&(preset<=MAX_PRESET)) {
+	if ((preset>0)&(preset<=MAX_PRESET)) {
 		if (debug) printf("Debug: Chosen preset %.2i = %s\n", preset, preset_name[preset-1]);
-		memset(magic,0,27*35); magicnum = 0; i = 0;
-		while (magicnum<preset_size[preset-1]) {
-			if (debug) printf("Debug: Preset Magic [%s]\n", preset_data[preset-1][magicnum]);
-			strcpy(magic[magicnum], preset_data[preset-1][magicnum]);
-			magicnum++;
-		}
-	}*/
+		memset(command,0,sizeof(command));
+		if (debug) printf("Debug: Preset Colour Command [%s]\n", preset_data[preset-1]);
+		strcpy(command, preset_data[preset-1]);
+	}
 	if (strlen(command)>0) {
 		i = is_valid_command_string(command);
 		if (i>0) {
