@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Mon, 14 May 2012 22:29:48 +0100
+Source: alienfx
+Binary: alienfx
+Architecture: source amd64
+Version: 0.9
+Distribution: unstable
+Urgency: low
+Maintainer: Simon Tibble <simon@tibble.net>
+Changed-By: Simon Tibble <simon@tibble.net>
+Description: 
+ alienfx    - Alienware AlienFX Light Manipulation Program
+Changes: 
+ alienfx (0.9) unstable; urgency=low
+ .
+   * First version
+Checksums-Sha1: 
+ 5da47a3886f3b28d9f71cba1fda6548c6158d9e4 1398 alienfx_0.9.dsc
+ 5620e3bb0a4d9f72b11ee89adf0334c14f7769a1 18130 alienfx_0.9.tar.gz
+ c67e5bec78285b59d4ed447295a4703ce0351fe0 18598 alienfx_0.9_amd64.deb
+Checksums-Sha256: 
+ ecb3ac2e570a52f88cbddae5b0328622274453edd96abb147a4e07d5a5adfab6 1398 alienfx_0.9.dsc
+ 8ebdd3d2d79409b18ab6b99d58fa67e367d53f5729db520ade7b373822a64e41 18130 alienfx_0.9.tar.gz
+ a267a80c94ff827b5f2e2701ac54267f8fe3cb43cfef031ee67e32e22e8ae0a8 18598 alienfx_0.9_amd64.deb
+Files: 
+ 837688464c665f38c32f66642ba501c5 1398 misc optional alienfx_0.9.dsc
+ 578f36679315fb1a959cead7332e5681 18130 misc optional alienfx_0.9.tar.gz
+ 67912e4e1a2040d08ff25ff82c45798a 18598 misc optional alienfx_0.9_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.12 (GNU/Linux)
+
+iQIcBAEBAgAGBQJPsXlQAAoJEK5X79gvATa3BWoQAJJB2kK/lrEbsdwohRjj1+i7
+8qY4lk/54dSePo9VLWX2YwSyrbuIg20dDQAt7RdMmmiBmzT6XyWUW8Y8/dpwAxXU
+Tk5IxrkeuNFgMubsjHGpKk4fhNAvG8RP8VZlWXVYr/epw8iGIFDcpAyctimAoHdT
+ZEAlFPPiJLYw9hw3DzUtAtvEQJzYBbdSHs6aa0UwNzPA/cQ2xwChGwFuC29IFXJj
+sJj5wERq8dRhTpFxDg/VLH0qvpNmRw81Uvo7TpJkoac401VAtEfYRiPS3RQevFgn
+yIJB5ng2RSBbY3ncALhPeFqm483UOPjWnYKaxl+py7wxWwPIXWlfuEolpuvszkXs
+9CkS8uQM4/0k5pOhw2m/Ekru6cxZn82YjDSfQ4rRNFrKdIMjt6qYoXmqvPPeFlsT
+3DH4ANWntuOGJa3jM6dw39vWKzRFDy5wzRLcHGudJGvAJbQiVja3UV98uE8ze+WM
+82mVVlpqeYpTkAGkZ4BdPB5jJyXSfMHdZO/SzAAnO+Kbl6ooD6KPC3B47rMVidxv
+/bYmGJXzF4xWpxU0tScC0nzcPsmfW3GQkwNhvnkux6m2hE9/KwkFRQOboJw07Sd+
+B5cK05fBN6VLhid46Yn0+duSqtaOZ+o+yrtpVGzHsXaxnDSF3W6dSGI3hFWdkeqV
+4z/g1iShjZWkME+Vn4tb
+=jomB
+-----END PGP SIGNATURE-----

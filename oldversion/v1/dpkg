@@ -1,0 +1,29 @@
+### Commented entries have reasonable defaults.
+### Uncomment to edit them.
+Source: alienfx
+Section: misc
+Priority: optional
+Homepage: http://a0z.eu/alienfx/
+Standards-Version: 3.9.2
+
+Package: alienfx
+Version: 1.0
+Maintainer: Simon Tibble <simon@tibble.net>
+# Pre-Depends: <comma-separated list of packages>
+Depends: libusb-1.0-0
+# Recommends: <comma-separated list of packages>
+# Suggests: <comma-separated list of packages>
+# Provides: <comma-separated list of packages>
+# Replaces: <comma-separated list of packages>
+Architecture: amd64
+# Copyright: <copyright file; defaults to GPL2>
+# Changelog: <changelog file; defaults to a generic changelog>
+Readme: readme.txt
+# Extra-Files: readme.txt
+Files: alienfx /usr/bin/
+ alienfx.1 /usr/share/man/man1/
+#  <more pairs, if there's more than one file to include. Notice the starting space>
+Description: Alienware AlienFX Light Manipulation Program
+ The AlienFX feature is available on some AlienWare computers. This program
+ enables the ability to change the lights to any RGB value, and also to turn
+ the lights off completely.

@@ -5,27 +5,27 @@ else
    ALIENFX_BUILD := 32bit
 endif
 
+all:	build	deb
 
-all:  build$(ALIENFX_BUILD)
+build:  build$(ALIENFX_BUILD)
 
 build64bit: alienfx.cpp
-	g++ -lusb-1.0 -o alienfx64 alienfx.cpp
-	cp alienfx64 alienfx
+	g++ -lusb-1.0 -o alienfx alienfx.cpp
 
 build32bit: alienfx.cpp
-	g++ -m32 -I/usr/include/libusb-1.0 -g -fPIC -lusb-1.0 -lpthread -o alienfx32 alienfx.cpp
-	cp alienfx32 alienfx
+	g++ -m32 -I/usr/include/libusb-1.0 -g -fPIC -lusb-1.0 -lpthread -o alienfx alienfx.cpp
 
-install:  install$(ALIENFX_BUILD)
+install:
+	install -o root -g root -m 4755 alienfx /usr/bin/alienfx
+	install -o root -g root -m 4755 alienfx /usr/bin/alienfx
 
-install64bit:
-	install -o root -g root -m 4755 alienfx64 /usr/bin/alienfx
+deb:	deb$(ALIENFX_BUILD)
 
-install32bit:
-	install -o root -g root -m 4755 alienfx32 /usr/bin/alienfx
+deb64bit:
+	equivs-build --full dpkg_amd64
 
-deb:
-	equivs-build --full dpkg
+deb32bit:
+	equivs-build --full dpkg_i386
 
 tarball:
 	rm source.tar.gz
