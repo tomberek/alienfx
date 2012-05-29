@@ -147,15 +147,6 @@ void print_help() {
 	printf("Permanently saving the settings into lightchip not available on some models.\n");
 	printf("If called with no arguments the lights will silently turn off.\n");
 	printf("For example commands see the preset list.\n");
-/*	printf("Simple examples:\n  alienfx -c P1Z00FF00\n    Set all lights red for boot-up.\n");
-	printf("  alienfx -c P1Z00FF00P5Z00FF00P6Z00FF00P7Z00FF00P8Z00FF00\n    Constant red\n");
-	printf("Complex example:\n");
-	printf("  alienfx -c P1Z00FFFFP5Z00F0F0P6Z00FFF0P7Z00BF00P8Z00FF40\n");
-	printf("    On boot-up all zones fixed white, on AC all zones fixed green, while\n");
-	printf("    charging all zones fixed yellow, if battery low all zones blink red,\n");
-	printf("    on battery all zones orange.\n");
-	printf("  \n");
-	printf("  \n");*/
 	printf("See 'man alienfx' for more information.\n");
 }
 
@@ -326,7 +317,7 @@ void afx_set(unsigned char cmd, unsigned char idx, unsigned char zone, unsigned 
 	memset(thedata, FILL_BYTE, DATA_LENGTH);
 	thedata[0] = START_BYTE;//Always 0x02?
 	thedata[1] = cmd;//Command
-	thedata[2] = z1; //8-bits ZONE .. or INDEX???
+	thedata[2] = z1; //3-bits ZONE and 5-bits INDEX?
 	thedata[3] = z2; //8-bits ZONE
 	thedata[4] = z3; //8-bits ZONE
 	thedata[5] = z4; //8-bits ZONE
@@ -356,12 +347,12 @@ void afx_reboot() {
 }
 
 void afx_spd(int speed) {
-	speed = speed * 100;
-	if(speed > MAX_SPEED) speed = MAX_SPEED;
-	if(speed < MIN_SPEED) speed = MIN_SPEED;
+//	speed = speed * 100;
+//	if(speed > MAX_SPEED) speed = MAX_SPEED;
+//	if(speed < MIN_SPEED) speed = MIN_SPEED;
 	int b1 = (speed >> 8) & 0xFF;
 	int b2 = speed & 0xFF;
-	afx_cmd(COMMAND_SET_SPEED,b1,b2,b1,b2,b1,b2,0);
+	afx_cmd(COMMAND_SET_SPEED,b1,b2,0,0,0,0,0);
 }
 
 bool afx_raw(unsigned char cmd[DATA_LENGTH]) {
