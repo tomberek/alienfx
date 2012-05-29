@@ -18,9 +18,11 @@
 alienfx \- Change the configuration of AlienFX lightchip control on AlienWare hardware
 .SH "SYNOPSIS"
 .HP \w'\fBalienfx\fR\ 'u
-\fBalienfx\fR [\fB\-c\fR Z\fInnmrgb\fR[\fIrgb\fR]...] [\fB\-d\fR \fInumber\fR] [\fB\-P\fR \fIhex\fR] [\fB\-r\fR] [\fB\-R\fR] [\fB\-s\fR] [\fB\-t\fR \fInumber\fR] [\fB\-u\fR] [\fB\-v\fR]
+\fBalienfx\fR [\fB\-c\fR \fIZnnmrgb\fR[\fIrgb\fR]...] [\fB\-d\fR \fInumber\fR] [\fB\-P\fR \fIhex\fR] [\fB\-r\fR] [\fB\-R\fR] [\fB\-s\fR] [\fB\-t\fR \fInumber\fR] [\fB\-u\fR] [\fB\-v\fR]
 .PP
 \fBalienfx \-p\fR \fInumber\fR [\fB-u\fR] [\fB-v\fR]
+.PP
+\fBalienfx [\fB-u\fR] [\fB-v\fR] \-X\fR \fInum num num num num num num num num\fR
 .PP
 \fBalienfx \-h\fR
 .SH "DESCRIPTION"
@@ -36,7 +38,7 @@ If \fBalienfx\fR is called with no arguments all the lights are turned off.
 .PP
 \fB\-c\fR \fB\fIZnnmrgb[rgb]...]\fR\fR  (Default: Z00F000)
 .RS 4
-Colour command.  This option specifies the ZONE affected, the MODE to be used, the primary RGB colour to be set and the secondary RGB colour to be set that you want included in this command.
+Colour command.  This option specifies the ZONE affected, the MODE to be used, the primary RGB colour to be set and the secondary RGB colour to be set that you want included in this command.  Case insensitive.
 .PP
 ZONE is 2-digit integer between 00 and 27.  There are 27 possible zones, according to AlienFX SDK documentation.  Specify the zone number to indicate which zone the colour will be set for.  Setting this to 00 indicates the colour command will be set for all zones.  The default is to set colour for all zones.  Each lightchip is different due to changes between AlienWare hardware revisions, so experiment with your own zone numbers to find your specific zones if you want to set lights individually.
 .PP
