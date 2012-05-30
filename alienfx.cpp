@@ -348,8 +348,8 @@ void afx_reboot() {
 
 void afx_spd(int speed) {
 //	speed = speed * 100;
-//	if(speed > MAX_SPEED) speed = MAX_SPEED;
-//	if(speed < MIN_SPEED) speed = MIN_SPEED;
+	if(speed > MAX_SPEED) speed = MAX_SPEED;
+	if(speed < MIN_SPEED) speed = MIN_SPEED;
 	int b1 = (speed >> 8) & 0xFF;
 	int b2 = speed & 0xFF;
 	afx_cmd(COMMAND_SET_SPEED,b1,b2,0,0,0,0,0);
