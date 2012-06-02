@@ -25,6 +25,7 @@ Options:
   -c ZnnM[RGB[RGB]]..   Lightchip Command
   -d <num>  Set morph/flash delay time. (1=Fastest to 10=Slowest)
   -h        This helpful message
+  -p <num>  Apply a preset. Use '0' to get a list. Implies ignorance of -c.
   -P <hex>  Specify the hex ProductID of lightchip
   -r        Reset chip; software reset of lightchip
   -R        Reboot chip; hardware reset of lightchip
@@ -34,7 +35,6 @@ Options:
   -v        Show verbose debug output
   -w        Check for lightchip ready (excess,slow)
   -X <num>  Raw command mode. Expects nine 0-255 values
-  -z <num>  Apply a preset. Use '0' to get a list. Implies ignorance of -c.
 Each Command is made up of Z (zone), M (mode) and RGB (colour) values.
 Zone is either 00=All or 01-27.
 Mode is either B=Blink, M=Morph or F=Fixed.
