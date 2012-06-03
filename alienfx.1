@@ -77,9 +77,28 @@ Reset the lightchip before sending colour information.
 Reboots the lightchip, as if the power had been turned off then back on again.
 .RE
 .PP
-\fB\-s\fR
+\fB\-s\fR \fInum\fR
 .RS 4
-Save the colour commands into the lightchip EEPROM.
+Save the colour commands into the lightchip EEPROM for the specified powerblock.  Some powerblocks are:
+.RS 4
+0  ...  Current power mode
+.RE
+.RS 4
+1  ...  Load on boot / power on
+.RE
+.RS 4
+5  ...  Mains AC
+.RE
+.RS 4
+6  ...  Charging
+.RE
+.RS 4
+7  ...  On Battery (Low)
+.RE
+.RS 4
+8  ...  On Battery
+.RE
+If you are saving the \fBalienfx\fR calls into a shell script it is best to run the command with powerblock 0 and then powerblock 1.
 .RE
 .PP
 \fB\-t\fR \fInum\fR
@@ -142,10 +161,13 @@ Turn lights off.
 .PP
 Due to testing limitations, this program may not work on your specific hardware without tweaking.  However, many models have been programmed for including:
 .RS 4
-AlienWare M11X R1/R2 Laptop
+AlienWare M11X R1/R2/R3 Laptops
 .RE
 .RS 4
-AlienWare M11X R3 Laptop
+AlienWare M15X Laptop
+.RE
+.RS 4
+AlienWare M17X Laptop
 .RE
 .RS 4
 AlienWare AREA51
