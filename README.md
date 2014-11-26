@@ -41,34 +41,34 @@ To make source tarball:
 Sets zone `26` to a `f` ( fixed) colour of `#c9f` ( CSS-style colours, #RGB
 where each of R, G and B may be 0..f)
 
-Alienware AlienFX Light Manipulation Program v1.0
-Usage:    alienfx [options]
-   or     alienfx -h
-Options:
-  -c ZnnM[RGB[RGB]]..   Lightchip Command
-  -d <num>  Set morph/flash delay time. (1=Fastest to 10=Slowest)
-  -h        This helpful message
-  -p <num>  Apply a preset. Use '0' to get a list. Implies ignorance of -c.
-  -P <hex>  Specify the hex ProductID of lightchip
-  -r        Reset chip; software reset of lightchip
-  -R        Reboot chip; hardware reset of lightchip
-  -s <num>  Save to PowerBlock (for load-on-boot, etc)
-  -t <num>  Increase USB timing delay by increment (1 to 100)
-  -u        Show USB debug if needed
-  -v        Show verbose debug output
-  -w        Check for lightchip ready (excess,slow)
-  -X <num>  Raw command mode. Expects nine 0-255 values
-Each Command is made up of Z (zone), M (mode) and RGB (colour) values.
-Zone is either 00=All or 01-27.
-Mode is either B=Blink, M=Morph or F=Fixed.
-RGB is three single-digits of hex. Specify two colours, even if 2nd unused.
-Zones are either 1 or 0. 1 is on, 0 is off. There are sixteen zones.
-PowerBlock is either 0=Default, 1=Bootup, 5=AC, 6=Charge, 7=BattLow or 8=Batt.
-Defaults: Power=ALL, Zones=ALL, Mode=FIXED, RGB=000(black)
-Permanently saving the settings into lightchip not available on some models.
-If called with no arguments the lights will silently turn off.
-For example commands see the preset list.
-See 'man alienfx' for more information.
+    Alienware AlienFX Light Manipulation Program v1.0
+    Usage:    alienfx [options]
+       or     alienfx -h
+    Options:
+      -c ZnnM[RGB[RGB]]..   Lightchip Command
+      -d <num>  Set morph/flash delay time. (1=Fastest to 10=Slowest)
+      -h        This helpful message
+      -p <num>  Apply a preset. Use '0' to get a list. Implies ignorance of -c.
+      -P <hex>  Specify the hex ProductID of lightchip
+      -r        Reset chip; software reset of lightchip
+      -R        Reboot chip; hardware reset of lightchip
+      -s <num>  Save to PowerBlock (for load-on-boot, etc)
+      -t <num>  Increase USB timing delay by increment (1 to 100)
+      -u        Show USB debug if needed
+      -v        Show verbose debug output
+      -w        Check for lightchip ready (excess,slow)
+      -X <num>  Raw command mode. Expects nine 0-255 values
+    Each Command is made up of Z (zone), M (mode) and RGB (colour) values.
+    Zone is either 00=All or 01-27.
+    Mode is either B=Blink, M=Morph or F=Fixed.
+    RGB is three single-digits of hex. Specify two colours, even if 2nd unused.
+    Zones are either 1 or 0. 1 is on, 0 is off. There are sixteen zones.
+    PowerBlock is either 0=Default, 1=Bootup, 5=AC, 6=Charge, 7=BattLow or 8=Batt.
+    Defaults: Power=ALL, Zones=ALL, Mode=FIXED, RGB=000(black)
+    Permanently saving the settings into lightchip not available on some models.
+    If called with no arguments the lights will silently turn off.
+    For example commands see the preset list.
+    See 'man alienfx' for more information.
 
 
 ## Supported models
@@ -111,6 +111,8 @@ Zones vary by model so these are merely a starting point.
 I have built this on 64-bit hardware, though I include a 32-bit binary for
 completeness - and this is untested!  64-bit is known working.
 
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-         This AlienFX program is not endorsed by Alienware or Dell.
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+## Disclaimer
+
+This AlienFX program is not endorsed by Alienware or Dell.
+
