@@ -11,8 +11,7 @@
 
 ## Building from source
 
-Building the source code requires `libusb-1.0` headers.  If you are missing
-them on Debian, issue the command:
+Building the source code requires `libusb-1.0` headers.  To install them on Debian:
 
     apt-get install libusb-1.0-0-dev
 
@@ -99,6 +98,7 @@ Zones vary by model so these are merely a starting point.
 
 ### M11xR3
 
+  - 12: drive activity indicator
   - 13: power button
   - 15: WiFi indicator
   - 18: ALIENWARE logo
