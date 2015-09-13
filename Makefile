@@ -10,10 +10,10 @@ all:	build	deb
 build:  build$(ALIENFX_BUILD)
 
 build64bit: alienfx.cpp
-	g++ -lusb-1.0 -o alienfx alienfx.cpp
+	g++ -o alienfx alienfx.cpp -lusb-1.0
 
 build32bit: alienfx.cpp
-	g++ -m32 -I/usr/include/libusb-1.0 -g -fPIC -lusb-1.0 -lpthread -o alienfx alienfx.cpp
+	g++ -m32 -I/usr/include/libusb-1.0 -g -fPIC -o alienfx alienfx.cpp -lusb-1.0 -lpthread
 
 install:
 	install -o root -g root -m 4755 alienfx /usr/bin/alienfx
